@@ -4,7 +4,7 @@
   "repository": "https://github.com/electron/electron",
   "description": "Build cross platform desktop apps with JavaScript, HTML, and CSS",
   "devDependencies": {
-    "@electron/docs-parser": "^0.4.2",
+    "@electron/docs-parser": "^0.4.4",
     "@electron/typescript-definitions": "^8.6.1",
     "@octokit/rest": "^16.3.2",
     "@primer/octicons": "^9.1.1",
@@ -39,10 +39,10 @@
     "klaw": "^3.0.0",
     "lint": "^1.1.2",
     "lint-staged": "^8.1.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "nugget": "^2.0.1",
     "pre-flight": "^1.1.0",
-    "remark-cli": "^4.0.0",
+    "remark-cli": "^6.0.0",
     "remark-preset-lint-markdown-style-guide": "^2.1.1",
     "request": "^2.88.0",
     "semver": "^5.6.0",
@@ -83,7 +83,9 @@
     "start": "node ./script/start.js",
     "test": "node ./script/spec-runner.js",
     "tsc": "tsc",
-    "webpack": "node build/webpack/run-compiler"
+    "webpack": "node build/webpack/run-compiler",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "license": "MIT",
   "author": "Electron Community",
@@ -125,5 +127,9 @@
       "python script/check-trailing-whitespace.py --fix",
       "git add filenames.auto.gni"
     ]
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.362.1"
   }
 }
